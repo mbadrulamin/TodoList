@@ -10,6 +10,14 @@ function deleteItem(item){
     router.delete(route("items.delete", item));
 }
 
+function createNewItem(){
+    router.get(route("items.create"));
+}
+
+function editItem(item){
+    router.get(route("items.edit", item));
+}
+
 </script>
 
 
@@ -45,11 +53,9 @@ function deleteItem(item){
                                         <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" @click="deleteItem(item.id)">
                                             <i class="fas fa-trash-alt"></i> <!-- FontAwesome trash icon -->
                                         </button>
-                                        <a :href="route('items.edit', item)">
-                                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2">
+                                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2" @click="editItem(item)">
                                                 <i class="fas fa-edit"></i> <!-- FontAwesome edit icon -->
                                             </button>
-                                        </a>
 
                                     </div>
 

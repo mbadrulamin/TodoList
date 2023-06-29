@@ -39,7 +39,7 @@ Route::middleware([
 //Item Routing
 Route::get('/item', [ItemController::class, 'index'])->name('items.index');
 Route::prefix('/item')->group(function(){
-    Route::post('/create', [ItemController::class, 'create'])->name('items.create');
+    Route::get('/create', [ItemController::class, 'create'])->name('items.create');
     Route::post('/store', [ItemController::class, 'store'])->name('items.store');
     Route::put('/{item}', [ItemController::class, 'update'])->name('items.update');
     Route::get('{item}/edit', [ItemController::class, 'edit'])->name('items.edit');
