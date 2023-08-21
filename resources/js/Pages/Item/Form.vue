@@ -17,7 +17,7 @@ const form = useForm({
 function submit() {
     props.item
         ? form.put("/item/" + props.item.id)
-        : form.post("/item/");
+        : form.post("/item/store");
 }
 </script>
 
